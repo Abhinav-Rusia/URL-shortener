@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
-app.use("/api/create", shortUrlRoute);    
-app.use("/", shortUrlRoute);     
+app.use("/api/create", shortUrlRoute);
+app.use("/", shortUrlRoute);
 
 
 
@@ -25,17 +25,21 @@ app.use("/", shortUrlRoute);
 // Error handling middleware
 app.use(errorHandler)
 
-// Start server
-const startServer = async () => {
-    try {
-        await connectDB();
-        app.listen(3000, () => {
-            console.log("Server is running on http://localhost:3000");
-        });
-    } catch (error) {
-        console.error("Failed to connect to MongoDB:", error);
-        process.exit(1);
-    }
-};
+// Connect to MongoDB
+connectDB()
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Failed to connect to MongoDB:", error);
+  });
 
-startServer();
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(3000, () => {
+    console.log("Server is running on http://localhost:3000");
+  });
+}
+
+// Export for Vercel
+export default app;
