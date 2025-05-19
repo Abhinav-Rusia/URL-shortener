@@ -1,6 +1,6 @@
 # LittleUrl - Modern URL Shortener
 
-![LittleUrl Banner](https://i.imgur.com/placeholder-image.png)
+![LittleUrl Banner](./image.png)
 
 LittleUrl is a sleek, modern URL shortener built with the MERN stack (MongoDB, Express, React, Node.js). It transforms long, unwieldy URLs into short, shareable links with a beautiful, animated user interface.
 
@@ -31,20 +31,13 @@ LittleUrl is a sleek, modern URL shortener built with the MERN stack (MongoDB, E
 
 ## 📸 Screenshots
 
-### Home Page
-![Home Page](https://i.imgur.com/placeholder-home.png)
-*The main page with URL input form and features section*
-
-### URL Shortening
-![URL Shortening](https://i.imgur.com/placeholder-shortening.png)
-*The URL shortening process with loading animation*
 
 ### Results Display
-![Results](https://i.imgur.com/placeholder-results.png)
+![Results](./shortURL.png)
 *Displaying the shortened URL with copy functionality*
 
 ### Mobile View
-![Mobile View](https://i.imgur.com/placeholder-mobile.png)
+![Mobile View](./mobileShortUrl.png)
 *Responsive design for mobile devices*
 
 ## 🚀 Getting Started
@@ -75,7 +68,7 @@ LittleUrl is a sleek, modern URL shortener built with the MERN stack (MongoDB, E
    ```
 
 4. **Set up environment variables**
-   
+
    Create a `.env` file in the BACKEND directory:
    ```
    MONGO_URI=your_mongodb_connection_string
@@ -96,7 +89,7 @@ LittleUrl is a sleek, modern URL shortener built with the MERN stack (MongoDB, E
    ```
 
 6. **Open your browser**
-   
+
    Navigate to `http://localhost:5173` to see the application running.
 
 ## 🏗️ Project Structure
@@ -148,6 +141,46 @@ URL_ShortenerMERN/
 - **Accessibility**: Keyboard navigation and screen reader support
 - **Subtle Background**: Animated gradient blobs that move slowly in the background
 
+## 🚀 Deployment to Vercel
+
+This project is configured for easy deployment to Vercel. Follow these steps to deploy:
+
+### Environment Setup
+
+1. **Create environment variables in Vercel**:
+   - `VITE_API_URL`: Your backend API URL (e.g., https://your-app-name.vercel.app)
+   - `MONGO_URI`: Your MongoDB connection string
+
+2. **Deploy using the Vercel CLI**:
+   ```bash
+   # Install Vercel CLI if you haven't already
+   npm install -g vercel
+
+   # Login to Vercel
+   vercel login
+
+   # Deploy from the project root
+   vercel
+   ```
+
+3. **Or deploy using the Vercel Dashboard**:
+   - Push your code to GitHub
+   - Import the repository in the Vercel dashboard
+   - Configure the environment variables
+   - Deploy
+
+### Project Structure for Deployment
+
+The project includes a `vercel.json` configuration file that:
+- Sets up the backend API routes
+- Configures the frontend build
+- Handles routing between frontend and backend
+
+### Environment Variables
+
+- Development: Uses `.env` files in both FRONTEND and BACKEND directories
+- Production: Configured through the Vercel dashboard
+
 ## 🛠️ Future Enhancements
 
 - User authentication for managing personal links
@@ -164,7 +197,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👨‍💻 Author
 
-Created by [Your Name](https://github.com/yourusername)
+Created by [Abhinav Rusia](https://github.com/Abhinav-Rusia)
 
 ---
 

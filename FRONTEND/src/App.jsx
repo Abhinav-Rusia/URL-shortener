@@ -164,7 +164,16 @@ const App = () => {
             <div className="flex items-center justify-center w-12 h-12 rounded-full bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 mb-4">
               <FiBarChart2 size={24} />
             </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Track Clicks</h3>
+            <div className="flex items-center flex-wrap gap-2 mb-2">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white">Track Clicks</h3>
+              <motion.span
+                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs px-2 py-1 rounded-full font-medium"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                Coming Soon...
+              </motion.span>
+            </div>
             <p className="text-gray-600 dark:text-gray-300">See how many people click on your shortened links.</p>
           </motion.div>
         </motion.div>

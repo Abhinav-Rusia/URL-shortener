@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { motion } from 'framer-motion';
 import { FiLink, FiCopy, FiCheck, FiLoader } from 'react-icons/fi';
+import api from '../utils/api';
 
 const UrlShortener = () => {
   const [url, setUrl] = useState('');
@@ -22,7 +22,7 @@ const UrlShortener = () => {
       setLoading(true);
       setError('');
 
-      const response = await axios.post('http://localhost:3000/api/create', { url });
+      const response = await api.post('/api/create', { url });
       setShortUrl(response.data.shortUrl);
     } catch (err) {
       setError(
